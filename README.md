@@ -9,13 +9,14 @@ This firmware is an anabtation of the previous firmware and has been updated to 
 
 #### Compulsary Features
 
+- [x] Improved Compiler Compatability 
 - [ ] Battry Charge and Voltage I2C Interface
 - [ ] WiFI
 - [ ] Webpage
 - [ ] ESP NOW
 - [ ] Live Configuration Count
 - [ ] OLED Display Intergration
-- [ ] Improved Compiler Compatability 
+
 
 #### Optional cool tasks
 
@@ -43,3 +44,4 @@ Below is short explanation of remaining files in the project folder.
 ```
 Additionally, the project contains Makefile and component.mk files, used for the legacy Make based build system. 
 They are not used or needed when building with CMake and idf.py.
+
