@@ -1,4 +1,4 @@
-# configurator-V2.0
+# Configurator-V2.0
 CBI-Energy Configurator Firmware
 
 This firmware is an anabtation of the previous firmware and has been updated to make use of the Espressive-IDF version 5.0
