@@ -3,13 +3,6 @@ CBI-Energy Configurator Firmware
 
 ## Road map of development sections that need to be created.
 
-### PCB Design
-- [ ] PCB Desgin
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-
 ### Firmware Design 
 
 ####
@@ -26,3 +19,10 @@ CBI-Energy Configurator Firmware
 - [ ] Automate the screen capture procedure for new designs
 - [ ] Automate the gereration of gerber files
 - [ ] Automate the generation of the datapack
+
+### PCB Design
+- [ ] PCB Desgin
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
