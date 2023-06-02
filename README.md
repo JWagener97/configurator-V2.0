@@ -15,6 +15,7 @@ This firmware is an anabtation of the previous firmware and has been updated to 
 - [ ] ESP NOW
 - [ ] Live Configuration Count
 - [ ] OLED Display Intergration
+- [ ] Improved Compiler Compatability 
 
 #### Optional cool tasks
 
