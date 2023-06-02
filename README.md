@@ -28,5 +28,3 @@ This firmware is an anabtation of the previous firmware and has been updated to 
 - [ ] Layout
 - [ ] Design Review
 - [ ] PCB Ordered
-- [ ] 
-- [ ] 
