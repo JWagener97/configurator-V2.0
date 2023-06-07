@@ -245,6 +245,7 @@ void i2c_hardware_scroll(SSD1306_t * dev, ssd1306_scroll_type_t scroll) {
 
 	i2c_cmd_link_delete(cmd);
 }
+
 uint16_t max17043_read_register(uint8_t reg)
 {
     uint8_t data[2];
@@ -262,7 +263,15 @@ uint16_t max17043_read_register(uint8_t reg)
     return (data[1] << 8) | data[0];
 }
 
-float max17043_read_register_soc(uint8_t reg)
+float max17043_volt(void)
+{
+	uint16_t voltageRaw = max17043_read_register(0x02);
+	float voltage = ((voltageRaw >> 4) * 0.00125);
+	return voltage;
+
+}
+
+float max17043_soc(uint8_t reg)
 {
     uint8_t data[2];
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();

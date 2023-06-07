@@ -107,7 +107,8 @@ typedef struct {
 extern "C"
 {
 #endif
-float max17043_read_register_soc(uint8_t reg);
+float max17043_soc(uint8_t reg);
+float max17043_volt(void);
 uint16_t max17043_read_register(uint8_t reg);
 void ssd1306_init(SSD1306_t * dev, int width, int height);
 int ssd1306_get_width(SSD1306_t * dev);
