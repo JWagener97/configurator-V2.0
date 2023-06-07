@@ -10,7 +10,7 @@ This firmware is an anabtation of the previous firmware and has been updated to 
 #### Compulsary Features
 
 - [x] Improved Compiler Compatability 
-- [ ] Battry Charge and Voltage I2C Interface
+- [x] Battry Charge and Voltage I2C Interface
 - [ ] WiFI
 - [ ] Webpage
 - [ ] ESP NOW
@@ -27,8 +27,8 @@ This firmware is an anabtation of the previous firmware and has been updated to 
 - [ ] Create a branch for ESP32-S2mini
 
 ### PCB Design
-- [ ] Layout
-- [ ] Design Review
+- [x] Layout
+- [x] Design Review
 - [ ] PCB Ordered
 
 
