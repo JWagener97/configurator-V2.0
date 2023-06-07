@@ -89,23 +89,31 @@ uint8_t Batt_Full[] = {
 
 SSD1306_t dev;
 float soc_pre = 0;
+char lineChar[32];
 void oled_display(void)
 {	
 	// Get the voltage of the LiPo battry
 	float volt = max17043_volt();
 	// Get the state of charge of the LiPo battry
 	float soc =  max17043_soc(0x04);
+	int dev_count = 10;
 	if ((soc == soc_pre))
         {
-            vTaskDelay(50 / portTICK_PERIOD_MS);
+			sprintf(&lineChar, "Device Count: %d",dev_count); // Add number of configured device count
+			ssd1306_display_text(&dev,1, lineChar, strlen(lineChar), false);
+			sprintf(&lineChar, "Dev SSID:"); // Add string for SSID
+			ssd1306_display_text(&dev,2, lineChar, strlen(lineChar), false);
+			sprintf(&lineChar, "WAN SSID:"); // Add string for SSID
+			ssd1306_display_text(&dev,3, lineChar, strlen(lineChar), false);
+			for(int i=0;i<128*2;i++) 
+			{
+				ssd1306_wrap_arround(&dev, SCROLL_LEFT, 2, 3, 0);
+			}
+            vTaskDelay(250 / portTICK_PERIOD_MS);
         }
         else
         {
 			// Display the LiPo information on the oled display
-			char lineChar[20];
-			ESP_LOGI(BAT_TAG, "%.2f,%3.2f", soc,volt);
-			sprintf(&lineChar, "%3.2fV\t\t%6.2f%%", volt, soc);
-			ssd1306_display_text(&dev,0, lineChar, strlen(lineChar), false);
 			if (soc <= 25.00)
 			{
 				ssd1306_bitmaps(&dev, 112, 0, Batt_Empty, 16, 8, false);
@@ -124,6 +132,9 @@ void oled_display(void)
 			{
 				ssd1306_bitmaps(&dev, 112, 0, Batt_Full, 16, 8, false);
 			}
+			ESP_LOGI(BAT_TAG, "%.2f,%3.2f", soc,volt);
+			sprintf(&lineChar, "%3.2fV\t\t%6.2f%%", volt, soc);
+			ssd1306_display_text(&dev,0, lineChar, strlen(lineChar), false);
 			soc_pre = soc;
 		}
 
